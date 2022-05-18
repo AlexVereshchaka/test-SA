@@ -12,10 +12,9 @@ Parameters:
   HostedZoneId:
       Type: String
       Description: Amazon Route53 Hosted Zone Id for DomainName
-  CertificateArn:
+  AcmCertificateArn:
     Type: String
-    Description: the Amazon Resource Name (ARN) of an AWS Certificate Manager certificate.
-    AllowedPattern: "arn:aws:.*"
+    Description: the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate.
 Mappings:
   RegionMap:
     us-east-1:
@@ -96,7 +95,7 @@ Resources:
           ViewerProtocolPolicy: redirect-to-https
         PriceClass: PriceClass_All
         ViewerCertificate:
-          CertificateArn: !Ref CertificateArn
+          AcmCertificateArn: !Ref AcmCertificateArn
           SslSupportMethod: sni-only
   WebsiteDNSName:
     Type: AWS::Route53::RecordSetGroup
