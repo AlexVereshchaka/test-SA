@@ -1,7 +1,7 @@
 # test-SA
 
 
-#To run the solution you need:
+To run the solution you need:
 1. Clone the repository on your PC
 2. Go to the CloudFormation service
 3. Click Create stack
