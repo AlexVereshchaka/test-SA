@@ -1,20 +1,21 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: test SA
+Description: Creates an S3 bucket configured for hosting a static website, and a Route
+  53 DNS record pointing to the bucket
 Parameters:
   DomainName:
     Type: String
     Description: The DNS name of an existing Amazon Route 53 hosted zone
-    AllowedPattern: (?!-)[a-zA-Z0-9-.]{1,63}(?<!-)
-    ConstraintDescription: must be a valid DNS zone name.
   BucketName:
-      Type: String
-      Description: Amazon S3 files bucket name
+    Type: String
+    Description: Amazon S3 files bucket name
   HostedZoneId:
-      Type: String
-      Description: Amazon Route53 Hosted Zone Id for DomainName
+    Type: String
+    Description: Amazon Route53 Hosted Zone Id for DomainName
+
   AcmCertificateArn:
     Type: String
-    Description: the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate.
+    Description: Amazon S3 files bucket name
+   
 Mappings:
   RegionMap:
     us-east-1:
